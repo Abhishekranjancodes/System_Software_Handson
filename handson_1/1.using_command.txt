@@ -1,0 +1,20 @@
+/*
+==========================================================================================
+Name: 1.using_command.txt
+Author: Abhishek Ranjan
+Description: Create following types of file using shell command
+		a. soft link
+		b. hard link
+		c. FIFO
+Date: 9th Aug, 2025
+==========================================================================================
+*/
+
+1. Using shell command
+	a) soft link
+		ln -s dummy.txt dummy
+	b) hard link
+		ln dummy.txt dummy2.txt
+	c) FIFO
+		mkfifo name
+		

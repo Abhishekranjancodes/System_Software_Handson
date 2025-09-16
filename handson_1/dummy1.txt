@@ -1,0 +1,2 @@
+I am writing using newfd duplicated by fcntl
+I am writing using old fd

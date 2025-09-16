@@ -1,0 +1,6 @@
+I am written in dummy.txt
+if you are able to see this text in dummy2.txt
+then copying file has been sucessul.
+
+Best Regards,
+Abhishek Ranjan
