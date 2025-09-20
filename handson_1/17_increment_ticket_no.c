@@ -21,6 +21,11 @@ int main(){
 		int ticket_no;
 	}db;
 	struct flock lock;
+	lock.l_type = F_WRLCK;
+	lock.l_whence = SEEK_SET;
+	lock.l_start = 0;
+	lock.l_len = 0;
+	lock.l_pid = getpid();
 	int fd;
 	fd = open("db", O_RDWR);
 	printf("Entering Critical section\n");
