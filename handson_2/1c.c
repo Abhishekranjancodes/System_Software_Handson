@@ -1,9 +1,9 @@
 /*
 ===============================================================================
-Name: 1a.c
+Name: 1c.c
 Author: Abhishek Ranjan
 Description: Program to set a interval timer in 10sec and 10 micro second
-		a.ITIMER_REAL
+		a.ITIMER_PROF
 
 Date: 22nd Sept, 2025
 
@@ -24,18 +24,16 @@ void handler(int signum) {
 int main() {
     struct itimerval timer;
 
-    signal(SIGALRM, handler);
+    signal(SIGPROF, handler);
 
     timer.it_value.tv_sec = 0;
     timer.it_value.tv_usec = 10;
     timer.it_interval.tv_sec = 10;
     timer.it_interval.tv_usec = 10;
 
-    setitimer(ITIMER_REAL, &timer, NULL);
+    setitimer(ITIMER_PROF, &timer, NULL);
 
-    while (1){
-	pause();
-    }
+    while (1);
 
     return 0;
 }
@@ -43,13 +41,13 @@ int main() {
 /*
 ===============================================================================
 Output:
-oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ cc 1a.c
+
+oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ cc 1c.c
 oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ ./a.out
 Timer expired 
 Timer expired 
 Timer expired 
 ^C
 oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ 
-
 ===============================================================================
 */
