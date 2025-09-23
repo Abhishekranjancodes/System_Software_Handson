@@ -23,7 +23,7 @@ int main(){
 	
 	int i;
 	for(i=0;i<100;i++){
-		int pid = getpid();
+		int pid = getppid();
 	}
 	asm volatile("cpuid" ::: "%rax", "%rbx", "%rcx", "%rdx");
 	asm volatile("rdtsc" : "=a"(lowerbit), "=d"(higherbit));
@@ -39,7 +39,7 @@ Output:
 
 oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ cc 4.c
 oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ ./a.out
-Number of cycles taken by getpid() is: 433290
+Number of cycles taken by getpid() is: 221488
 oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$
 
 ===============================================================================
