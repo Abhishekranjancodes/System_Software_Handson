@@ -1,3 +1,13 @@
+/*
+============================================================================
+Name: 15.c
+Author: Abhishek Ranjan
+Description: Program to send some data from parent to the child process
+
+Date: 28th sept, 2025
+============================================================================
+*/
+
 #include<stdio.h>
 #include<unistd.h>
 
@@ -18,3 +28,14 @@ int main(){
 		write(fd[1],"Abhishek_Ranjan",16);
 	}
 }
+/*
+===============================================================================
+Output:
+
+oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ cc 15.c
+oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ ./a.out
+message:Abhishek_Ranjan
+oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$
+
+===============================================================================
+*/
