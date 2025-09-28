@@ -1,3 +1,15 @@
+/*
+============================================================================
+Name: 16.c
+Author: Abhishek Ranjan
+Description: Program to send and receive data from parent to child and vice versa.
+		using two way communication.
+
+Date: 28th sept, 2025
+============================================================================
+*/
+
+
 #include<stdio.h>
 #include<unistd.h>
 
@@ -22,4 +34,17 @@ int main(){
 		printf("Messsage from child: %s\n", buf2);
 	}
 }
+
+/*
+===============================================================================
+Output:
+
+oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ cc 16.c
+oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$ ./a.out
+Messsage from child: Namaste_parent
+Message from Patent:Namaste_child
+oldfish@oldfish-Katana-GF66-12UC:~/Desktop/Term_1/Linux_call/handson/handson_2$
+
+===============================================================================
+*/
 
