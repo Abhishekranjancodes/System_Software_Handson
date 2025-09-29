@@ -1,9 +1,10 @@
 
 /*
 ============================================================================
-Name: 26.c
+Name: 27.c
 Author: Abhishek Ranjan
-Description: Program to send messages to the message queue.
+Description: Program to receive message from the message queue.
+		a. with 0 as a flag.
 
 Date: 29th sept, 2025
 ============================================================================
@@ -14,7 +15,7 @@ Date: 29th sept, 2025
 #include <sys/msg.h>
 #include <sys/types.h>
 #include <string.h>
-
+#include <stdlib.h>
 int main(){
 	struct msg {
 		long int m_type;
@@ -25,10 +26,11 @@ int main(){
 	printf("Enter message type: ");
 	scanf("%ld", &myq.m_type);
 	getchar();
-	printf("Enter message text: ");
-	scanf("%[^\n]", myq.message);
-	int size = strlen(myq.message);
-	msgsnd(mqid, &myq, size +1,0);
+	int ret = msgrcv(mqid, &myq, sizeof(myq.message), myq.m_type, 0);
+	if(ret == -1)
+		exit(-1);
+
+	printf("message type: %ld\n message: %s\n", myq.m_type, myq.message);
 }
 
 /*
